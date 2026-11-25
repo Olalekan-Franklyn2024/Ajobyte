@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Ajobyte Page</title>
+   
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body class="secondbody">
+    <div id="side-bar">
+        <div id="home-btn">
+            🏠
+            <p id="sidebar-text">Home</p>
+        </div>
+        <div id="Circles-btn">
+            👥
+            <p id="sidebar-text">Circles</p>
+
+
+
+        </div>
+        <div id="Account-Summary">
+            🧾
+            <p id="sidebar-text">Account Summary</p>
+        </div>
+        <div id="profile-btn">
+            🧑‍🦰
+            <p id="sidebar-text">Profile</p>
+        </div>
+        <div id="Contact-btn">
+            📞
+            <p id="sidebar-text">Contact Us</p>
+        </div>
+
+    </div>
+
+
+    <div id="welcome-text">
+
+        <p id="greeting">Good Evening 👋</p>
+
+        <div id="namess">
+            <span id="displayName"></span> <span id="displayName2"></span>
+        </div>
+
+        <p id="currentDate"></p>
+
+    </div>
+
+    <div class="balance">
+        <div class="balance-card-inner">
+            <div class="Naira-account">
+                <div id="money-info">
+                    <p>Total Account Wallet</p>
+
+                    <p class="account-balance">₦500,000.00</p>
+
+                    <p class="account-number">9056 7413 7670</p>
+
+                </div>
+                
+                <div id="transactions">
+                    <p class="t-text">RECENT TRANSACTIONS</p>
+                   <p> <span class="money-received">+₦37,000</span> from STARK TECHNOLOGIES</p>
+                    <p><span class="money-sent">-₦20,000</span> to Ade POS ventures </p>
+                    <p> <span class="money-received">+₦30,000</span> from MR ABC Ventures</p>
+                    <p><span class="money-sent">-₦20,000</span> to OLABISI RAHEEM AKANDE </p>
+                    <p> <span class="money-received">+₦8,000,000</span> from DELIGHT CITY BAKERY</p>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div id="uti-div">
+        <button id="utilities" onclick="exchangemoney()">Switch Account</button>
+
+      
+
+    </div>
+
+
+    
+
+
+
+    <div class="dashboard-card">
+    
+        <div class="left-section">
+            <h2>Contribution Wallet</h2>
+
+            <div id="balance2">
+                ₦100,000
+            </div>
+
+            <p class="member-id">Member ID: 9056 7413 7670</p>
+
+            <div class="goal-section">
+                <div class="goal-header">
+                    <span>Contribution Goal</span>
+                    <span>25%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+
+                <p class="goal-text">
+                    ₦100,000 raised of ₦500,000 target
+                </p>
+            </div>
+
+            <div class="action-buttons">
+                <button id="contributeBtn">Contribute</button>
+                <div id="contributeForm" style="display:none;">
+                    <input type="number" id="contributeInput" placeholder="Enter amount">
+                    <button id="saveContribution">Submit</button>
+                </div>
+
+                <button id="withdrawBtn">Withdraw</button>
+                <div id="withdrawForm" style="display: none;">
+                    <input type="number" id="withdrawInput" placeholder="Enter amount">
+                    <button id="saveWithdraw">Submit</button>
+                </div>
+                <button>Report</button>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h3>Recent Contributions</h3>
+
+            <ul class="activities">
+                <li>✅ ₦20,000 - November Contribution</li>
+                <li>✅ ₦20,000 - October Contribution</li>
+                <li>✅ ₦20,000 - September Contribution</li>
+                <li>✅ ₦20,000 - August Contribution</li>
+                <li>✅ ₦20,000 - July Contribution</li>
+            </ul>
+
+            <div class="next-payment">
+                <h4>Next Due Date</h4>
+                <p>25 November 2026</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="stats-container">
+        <div class="stat-card saved">
+            <span>💰</span>
+            <h3>Total Saved</h3>
+            <p>₦500,000</p>
+        </div>
+
+        <div class="stat-card contributions">
+            <span>📈</span>
+            <h3>Contributions</h3>
+            <p>14</p>
+        </div>
+
+        <div class="stat-card month">
+            <span>📅</span>
+            <h3>This Month</h3>
+            <p>₦80,000</p>
+        </div>
+    </div>
+        
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+            // Get the first user's name from local storage
+        const name1 = localStorage.getItem("userName");
+
+        // Get the second user's name from local storage
+        const name2 = localStorage.getItem("userName2");
+
+        // Display the first name on the page
+        document.getElementById("displayName").textContent = name1;
+
+        // Display the second name on the page
+        document.getElementById("displayName2").textContent = name2;
+
+
+        // Function that shows a KYC warning message
+        function exchangemoney(){
+
+            alert("Please complete KYC before using this feature");
+
+        }
+
+
+        // Find the Contribute button
+        const contributeBtn = document.getElementById("contributeBtn");
+
+        // Find the hidden contribution form
+        const contributeForm = document.getElementById("contributeForm");
+
+
+        // When the user clicks the Contribute button...
+        contributeBtn.addEventListener("click", () => {
+
+            // Show the contribution form
+            contributeForm.style.display = "block";
+
+            withdrawForm.style.display = "none";
+
+        });
+
+
+        // Starting wallet balance
+        let balance2 = 100000;
+
+
+        // Find the Submit button inside the contribution form
+        const saveContribution = document.getElementById("saveContribution");
+
+
+        // When the user clicks Submit...
+        saveContribution.addEventListener("click", () => {
+
+            // Get the amount entered by the user
+            const amount = Number(
+                document.getElementById("contributeInput").value
+            );
+
+            // Check if the amount entered is valid
+            if(amount <= 0){
+
+                alert("Enter a valid amount");
+
+                // Stop the code from running any further
+                return;
+            }
+
+            // Add the entered amount to the current balance
+            balance2 = balance2 + amount;
+
+            // Update the balance displayed on the page
+            document.getElementById("balance2")
+            .innerText =
+            `₦${balance2.toLocaleString()}`;
+
+            // Clear the input field after submission
+            document.getElementById("contributeInput").value = "";
+
+            // Hide the contribution form again
+            contributeForm.style.display = "none";
+
+            });
+
+
+            
+
+            const withdrawBtn = document.getElementById("withdrawBtn");
+
+            const withdrawForm = document.getElementById("withdrawForm");
+            
+            withdrawBtn.addEventListener("click", () => {
+
+                withdrawForm.style.display = "block";
+
+
+            })
+
+             const saveWithdraw= document.getElementById("saveWithdraw");
+
+             saveWithdraw.addEventListener("click", () => {
+
+            // Get the amount entered by the user
+            const amount2 = Number(
+                document.getElementById("withdrawInput").value
+            );
+
+            // Check if the amount entered is valid
+            if(amount2 >= balance2){
+
+                alert("Withdrawal is greater than balance");
+
+                // Stop the code from running any further
+                return;
+            }
+
+             // Removes the entered amount from the current balance
+            balance2 = balance2 - amount2;
+
+            // Update the balance displayed on the page
+            document.getElementById("balance2")
+            .innerText =
+            `₦${balance2.toLocaleString()}`;
+
+             // Clear the input field after submission
+            document.getElementById("withdrawInput").value = "";
+
+             // Hide the contribution form again
+            withdrawForm.style.display = "none";
+
+             });
+
+
+
+
+
+            const hour = new Date().getHours();
+
+            let greeting;
+
+            if(hour < 12){
+                greeting = "Good Morning 👋";
+            }
+            else if(hour < 18){
+                greeting = "Good Afternoon 👋";
+            }
+            else{
+                greeting = "Good Evening 👋";
+            }
+
+            document.getElementById("greeting").textContent =
+            greeting;
+
+
+    </script>
+</html>
